@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    text-decoration: none;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated gradient background */
+
+.bg-animation{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(270deg,#3b82f6,#9333ea,#ec4899,#06b6d4);
+background-size:800% 800%;
+animation:gradientMove 15s ease infinite;
+opacity:0.15;
+z-index:-1;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+}
+
+.logo{
+font-size:46px;
+font-weight:700;
+background:linear-gradient(90deg,#38bdf8,#c084fc);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav li{
+cursor:pointer;
+transition:.3s;
+}
+
+nav li:hover{
+color:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 8%;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero-text span{
+color:#38bdf8;
+}
+
+.hero-text h2{
+font-size:32px;
+margin-bottom:20px;
+color:#c084fc;
+}
+
+.hero-text p{
+opacity:.8;
+margin-bottom:30px;
+line-height:1.6;
+}
+
+.btn{
+padding:14px 34px;
+border:none;
+border-radius:40px;
+background:linear-gradient(90deg,#38bdf8,#c084fc);
+font-weight:600;
+cursor:pointer;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+
+.hero-img{
+position:relative;
+}
+
+.hero-img img{
+width:340px;
+border-radius:20px;
+transition:.5s;
+}
+
+.hero-img img:hover{
+transform:scale(1.05) rotate(2deg);
+}
+
+/* SKILLS */
+
+.skills{
+padding:100px 8%;
+text-align:center;
+}
+
+.skills h2{
+font-size:40px;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.card{
+padding:35px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+transition:.4s;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-15px) scale(1.05);
+background:rgba(255,255,255,0.1);
+}
+
+.card h3{
+margin-bottom:10px;
+color:#38bdf8;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.7;
+margin-top:60px;
+}
+
+
+
+
+     /* SKILLS */
+
+.skills-section{
+padding:100px 10%;
+background:#020617;
+}
+.skills h2{
+    color:#38bdf8;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+color:#38bdf8;
+}
+
+.skills-container{
+max-width:700px;
+margin:auto;
+
+
+
+
+
+}
+
+.skill{
+margin-bottom:35px;
+}
+
+.skill-info{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+font-weight:500;
+}
+
+.skill-bar{
+width:100%;
+height:10px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.skill-progress{
+height:10px;
+border-radius:20px;
+width:0;
+transition:2s;
+}
+
+.html{
+background:#38bdf8;
+}
+
+.css{
+background:#c084fc;
+}
+
+.js{
+background:#facc15;
+}
+
+.ui{
+background:#22c55e;
+}
+
+
+
+
+
+
+/* PROJECTS */
+
+.projects{
+padding:100px 8%;
+background:#020617;
+}
+
+.projects-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+}
+
+.project-card{
+background:#0f172a;
+border-radius:15px;
+overflow:hidden;
+transition:0.4s;
+position:relative;
+}
+
+.project-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.project-info{
+padding:20px;
+}
+
+.project-info h3{
+margin-bottom:10px;
+color:#38bdf8;
+}
+
+.project-info p{
+opacity:.8;
+margin-bottom:15px;
+}
+
+.project-btn{
+padding:10px 22px;
+border:none;
+border-radius:25px;
+background:linear-gradient(90deg,#38bdf8,#c084fc);
+cursor:pointer;
+transition:0.3s;
+}
+
+.project-btn:hover{
+transform:scale(1.1);
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(0,0,0,0.5);
+}
+
+
+
+
+/* EDUCATION SECTION */
+
+.education{
+padding:120px 8%;
+background:#020617;
+text-align:center;
+}
+
+.education-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+margin-top:60px;
+}
+
+.edu-card{
+background:rgba(255,255,255,0.05);
+padding:40px 30px;
+border-radius:20px;
+position:relative;
+overflow:hidden;
+transition:0.5s;
+border:1px solid rgba(255,255,255,0.1);
+transform:translateY(50px);
+opacity:0;
+}
+
+.edu-card h3{
+margin-bottom:15px;
+color:#38bdf8;
+font-size:24px;
+}
+
+.edu-card p{
+opacity:0.8;
+margin-bottom:15px;
+}
+
+.edu-card span{
+color:#c084fc;
+font-weight:600;
+}
+
+.edu-card:hover{
+transform:translateY(-15px) scale(1.05);
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* glowing circle */
+
+.circle{
+width:80px;
+height:80px;
+background:linear-gradient(135deg,#38bdf8,#c084fc);
+border-radius:50%;
+position:absolute;
+top:-20px;
+right:-20px;
+opacity:0.3;
+}
+
+/* animation reveal */
+
+.show{
+opacity:1;
+transform:translateY(0);
+transition:1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CONTACT SECTION */
+
+.contact{
+padding:120px 8%;
+background:#0f172a;
+}
+
+.contact-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+margin-top:60px;
+}
+
+/* left info */
+
+.contact-info h3{
+font-size:30px;
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.contact-info p{
+opacity:0.8;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+.info-box{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:18px;
+background:rgba(255,255,255,0.05);
+padding:14px 18px;
+border-radius:12px;
+transition:0.4s;
+}
+
+.info-box:hover{
+background:rgba(255,255,255,0.1);
+transform:translateX(8px);
+}
+
+.info-box span{
+font-size:22px;
+}
+
+/* form */
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border:none;
+border-radius:10px;
+background:#020617;
+color:white;
+outline:none;
+transition:0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+box-shadow:0 0 10px #38bdf8;
+}
+
+/* responsive */
+
+@media(max-width:900px){
+
+.contact-container{
+grid-template-columns:1fr;
+}
+
+}
+
+
+
+
+
+
+.contact{
+opacity:0;
+transform:translateY(80px);
+transition:1s;
+}
+
+
+
+/* ========================= */
+/* TABLET RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+gap:40px;
+height:auto;
+padding-top:60px;
+}
+
+.hero-text h1{
+font-size:48px;
+}
+
+.hero-img img{
+width:280px;
+}
+
+nav{
+padding:20px 6%;
+}
+
+.projects-container{
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+.education-container{
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+}
+
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px){
+
+/* navbar */
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* hero */
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding:40px 6%;
+}
+
+.hero-text h1{
+font-size:38px;
+}
+
+.hero-text h2{
+font-size:24px;
+}
+
+.hero-img img{
+width:230px;
+}
+
+/* sections */
+
+.skills{
+padding:80px 6%;
+}
+
+.projects{
+padding:80px 6%;
+}
+
+.education{
+padding:80px 6%;
+}
+
+.contact{
+padding:80px 6%;
+}
+
+/* cards */
+
+.cards{
+grid-template-columns:1fr;
+}
+
+/* projects */
+
+.projects-container{
+grid-template-columns:1fr;
+}
+
+/* education */
+
+.education-container{
+grid-template-columns:1fr;
+}
+
+/* contact */
+
+.contact-container{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.contact-form{
+padding:25px;
+}
+
+}
+
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px){
+
+.hero-text h1{
+font-size:30px;
+}
+
+.hero-text p{
+font-size:14px;
+}
+
+.section-title{
+font-size:30px;
+}
+
+.hero-img img{
+width:200px;
+}
+
+.btn{
+padding:12px 25px;
+font-size:14px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-animation"></div>
+
+<nav>
+
+<div class="logo">Portfolio</div>
+
+
+
+</nav>
+
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Hello, I'm <span>Bismah Maher</span></h1>
+
+<h2 id="typing"></h2>
+
+<p>
+I create modern, responsive and beautiful websites using
+HTML, CSS and JavaScript with smooth animations and great UI.
+</p>
+
+<a href="https://bismah-maher.github.io/Saylani-project1/saylani/" class="btn">View Projects</a>
+
+</div>
+
+<div class="hero-img">
+<img src="image.png">
+</div>
+
+</section>
+
+
+
+ <section class="skills-section">
+
+<section class="skills">
+
+<h2>My Skills</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>HTML</h3>
+<p>Semantic and accessible markup.</p>
+</div>
+
+<div class="card">
+<h3>CSS</h3>
+<p>Modern UI, animations and layouts.</p>
+</div>
+
+<div class="card">
+<h3>JavaScript</h3>
+<p>Interactive user experiences.</p>
+</div>
+
+<div class="card">
+<h3>UI / UX</h3>
+<p>Clean and modern interface design.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<div class="skills-container">
+
+<div class="skill">
+<div class="skill-info">
+<span>HTML</span>
+<span>95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress html"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-info">
+<span>CSS</span>
+<span>90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress css"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-info">
+<span>JavaScript</span>
+<span>80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress js"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-info">
+<span>UI Design</span>
+<span>85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress ui"></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<section class="projects">
+
+<h2 class="section-title">My Projects</h2>
+
+<div class="projects-container">
+
+
+
+    <div class="project-card">
+<img src="Screenshot 2026-03-07 012719.png">
+<div class="project-info">
+<h3>Cafe Website</h3>
+<p>An interactive Cafe website built using HTML, CSS and JavaScript.</p>
+<button class="project-btn">In Process</button>
+</div>
+</div>
+
+
+<div class="project-card">
+<img src="Screenshot 2026-03-07 013126.png">
+<div class="project-info">
+<h3>Islamic Website</h3>
+<p>A website about the pillars of Islam and Islamic teachings.</p>
+<button class="project-btn">In Process</button>
+</div>
+</div>
+
+
+
+
+<div class="project-card">
+<img src="Screenshot 2026-03-07 021030.png">
+<div class="project-info">
+<h3>Educational Website</h3>
+<p>Developed an educational platform during a hackathon.</p>
+
+<a href="https://bismah-maher.github.io/Saylani-project1/saylani/" target="_blank">
+<button class="project-btn">View Project</button>
+</a>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="education">
+
+<h2 class="section-title">My Education</h2>
+
+<div class="education-container">
+
+<div class="edu-card">
+<div class="circle"></div>
+<h3>Matriculation</h3>
+<p>Completed my secondary education from Army public school north (Malir cantt, karachi) with strong interest in Biology.</p>
+<span>2022 - 2023</span>
+</div>
+
+<div class="edu-card">
+<div class="circle"></div>
+<h3>Intermediate (Pre-Medical)</h3>
+<p>Completed my Higher education from Army Public Degree College (Malir cantt, karachi) with strong interest in Pre-Medical, while learning modern web development and UI design. </p>
+<span>2024-2025</span>
+</div>
+
+<div class="edu-card">
+<div class="circle"></div>
+<h3>Saylani Mass IT Training</h3>
+<p>Learning Web and App Development and building real websites and interactive projects.</p>
+<span>Ongoing</span>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<h3>Let's Work Together</h3>
+
+<p>
+Have a project idea or want to collaborate?
+Send me a message and I will get back to you soon.
+</p>
+
+<div class="info-box">
+
+<p>Email: maharbismah@gmail.com</p>
+</div>
+
+<div class="info-box">
+
+<p>Location: Karachi, Pakistan</p>
+</div>
+
+<div class="info-box">
+
+<p>LinkedIn: www.linkedin.com/in/bismah-m-199259384</p>
+</div>
+
+</div>
+
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit" class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<footer>
+© 2026 My Portfolio
+</footer>
+
+
+<script>
+
+/* typing animation */
+
+const text = "Front-End Developer";
+let i = 0;
+
+function typing(){
+
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typing,100);
+}
+
+}
+
+typing();
+
+
+
+    window.addEventListener("load", function(){
+
+document.querySelector(".html").style.width="95%";
+document.querySelector(".css").style.width="90%";
+document.querySelector(".js").style.width="80%";
+document.querySelector(".ui").style.width="85%";
+
+});
+
+
+
+
+
+
+
+/* scroll animation */
+
+const cards = document.querySelectorAll(".edu-card");
+
+window.addEventListener("scroll", () => {
+
+const trigger = window.innerHeight * 0.85;
+
+cards.forEach(card => {
+
+const top = card.getBoundingClientRect().top;
+
+if(top < trigger){
+card.classList.add("show");
+}
+
+});
+
+});
+
+
+
+
+
+
+
+/* contact reveal animation */
+
+const contactSection = document.querySelector(".contact");
+
+window.addEventListener("scroll", () => {
+
+const pos = contactSection.getBoundingClientRect().top;
+const screen = window.innerHeight;
+
+if(pos < screen - 100){
+contactSection.style.opacity = "1";
+contactSection.style.transform = "translateY(0)";
+}
+
+});
+</script>
+
+</body>
+</html>
